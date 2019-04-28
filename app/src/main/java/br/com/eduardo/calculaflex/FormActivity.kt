@@ -5,15 +5,18 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import br.com.eduardo.calculaflex.model.CarData
 import br.com.eduardo.calculaflex.utils.CalculaFlexTracker
 import br.com.eduardo.calculaflex.utils.DatabaseUtil
+import br.com.eduardo.calculaflex.utils.RemoteConfig
 import br.com.eduardo.calculaflex.watchers.DecimalTextWatcher
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_form.*
 
 
@@ -25,10 +28,18 @@ class FormActivity : BaseActivity() {
 
     private val defaultClearValueText = "0.0"
 
+    private fun loadBanner() {
+        val loginBanner = RemoteConfig.getFirebaseRemoteConfig()
+            .getString("banner_image")
+
+        Picasso.get().load(loginBanner).into(ivBanner)
+    }
+
+
     private fun sendDataToAnalytics() {
         val bundle = Bundle()
 
-        bundle.putString("EVEMT_NAME", "CALCULATION")
+        bundle.putString("EVENT_NAME", "CALCULATION")
         bundle.putDouble("GAS_PRICE", etGasPrice.text.toString().toDouble())
         bundle.putDouble("ETHANOL_PRICE", etEthanolPrice.text.toString().toDouble())
         bundle.putDouble("GAS_AVERAGE", etGasAverage.text.toString().toDouble())
@@ -50,6 +61,12 @@ class FormActivity : BaseActivity() {
         etEthanolPrice.addTextChangedListener(DecimalTextWatcher(etEthanolPrice))
         etGasAverage.addTextChangedListener(DecimalTextWatcher(etGasAverage,1))
         etEthanolAverage.addTextChangedListener(DecimalTextWatcher(etEthanolAverage,1))
+
+        val textView: TextView = findViewById(R.id.header_gas_station) as TextView
+        textView.text = RemoteConfig.getFirebaseRemoteConfig()
+            .getString("header_text")
+
+        loadBanner()
 
         btCalculate.setOnClickListener {
             saveCarData()

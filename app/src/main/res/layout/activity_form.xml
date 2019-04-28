@@ -9,14 +9,16 @@
             style="@style/container_master">
 
         <ImageView
-                style="@style/banner"/>
+                style="@style/banner"
+                android:id="@+id/ivBanner" />
 
         <View style="@style/divider"/>
 
         <TextView
                 style="@style/header_title"
                 android:drawableStart="@drawable/gas_station_icon"
-                android:text="@string/header_gas_station"/>
+                android:text="@string/header_gas_station"
+                android:id="@+id/header_gas_station"/>
 
         <View style="@style/divider"/>
 

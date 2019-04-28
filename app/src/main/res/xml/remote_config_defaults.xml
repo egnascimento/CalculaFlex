@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>min_version_app</key>
+        <value>1</value>
+    </entry>
+    <entry>
+        <key>header_text</key>
+        <value>"Posto de Gasolina"</value>
+    </entry>
+</defaultsMap>
