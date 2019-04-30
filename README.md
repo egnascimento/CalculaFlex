@@ -13,6 +13,18 @@ And that´s great, after that you can directly at the gas station in less than a
 ### *Prerequisites:*
 Mandatory having Android Studio installed to run this application and its integration.
 
+## *Instalation:*
+
+For having all functionality fully working you need to follow the basic steps below. Make sure you have Android Studio installed in your computer.
+
+#### 1. Install Android Studio 
+Make sure you have installed latest version.
+
+#### 2. Clone GitHub project into Android Studio
+After cloning the project, you will be able to check kotlin files and possible change/enhance any part of the logic you require.
+
+#### 3. Play/ Simulate the project
+Play/simulate scenarios as you like.
 
 ### *Authors:*
 * Eduardo G. Nascimento
