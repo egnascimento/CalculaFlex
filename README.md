@@ -2,7 +2,7 @@
 ## CalculaFlex
 Grupo: Luara Barbosa &amp; Eduardo Garcia
 
-![image](https://github.com/egnascimento/CalculaFlex/Banner/CalculaFlex_BannerPrincipal.png)
+![image](https://github.com/egnascimento/CalculaFlex/blob/master/Banner/CalculaFlex_BannerPrincipal.PNG)
 
 Nowadays most of people have one daily common issue - deciding what type of fuel using in your car, if using gasoline or alcohol.
 For that it has been created this app with the goal of based on some input data, deciding online which one you should decide.
